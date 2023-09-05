@@ -6,7 +6,6 @@ import { Link, NavLink } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
 import { SiTwitter, SiFacebook } from "react-icons/si";
 import { useEffect } from "react";
-import ReactTyped from "react-typed";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import Modal from "../modals/Modal";
