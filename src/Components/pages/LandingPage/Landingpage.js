@@ -11,7 +11,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import Modal from "../modals/Modal";
 import MobileNav from "./MobileNav";
-import Navbar from "./Navbar";
+
 import "../../styles/Landingpage.css";
 export default function Landingpage() {
   useEffect(() => {
