@@ -26,13 +26,7 @@ export default function Landingpage() {
         Nepal Groove
       </p>
       <p className="text-[23px] font-bold text-[#332727] md:text-[13px]">
-        <ReactTyped
-          strings={["Book Musicians for live music In your Venue"]}
-          typeSpeed={100}
-          loop
-          backSpeed={20}
-          showCursor={true}
-        />
+        Book Musicians for live music In your Venue
       </p>
       <p className="text-[17px] font-bold text-[#332727] md:text-[13px]">
         Connect Restaurants and Musicians
@@ -51,13 +45,7 @@ export default function Landingpage() {
         Nepal Groove
       </p>
       <p className="text-[23px] font-bold text-orange-700 md:text-[13px]">
-        <ReactTyped
-          strings={["Book Musicians for live music In your Venue"]}
-          typeSpeed={100}
-          loop
-          backSpeed={20}
-          showCursor={true}
-        />
+        Book Musicians for live music In your Venue
       </p>
       <p className="text-[17px] font-bold text-orange-700 md:text-[13px]">
         Connect Restaurants and Musicians
