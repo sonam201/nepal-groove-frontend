@@ -9,7 +9,9 @@ export default function DetailsOfViewers() {
   // for getting the booking details
   const [bookingArray, setBookingArray] = useState([]);
   const bookingdetails = async () => {
-    const bookingdetail = await axios.get(`http://localhost:5000/api/vuser`);
+    const bookingdetail = await axios.get(
+      `https://gold-fair-firefly.cyclic.app/api/vuser`
+    );
     const data = bookingdetail.data.vname;
     console.log(data, "chalfal");
     setBookingArray(data);

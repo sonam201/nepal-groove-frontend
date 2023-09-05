@@ -32,7 +32,7 @@ export default function ApplyForGig() {
   //funtion for apply
   const applynow = async (gig) => {
     const applyresponse = await axios.post(
-      "http://localhost:5000/api/applygig",
+      "https://gold-fair-firefly.cyclic.app/api/applygig",
       {
         appliedGig: gigId,
         appliedBy: userId,
@@ -51,7 +51,9 @@ export default function ApplyForGig() {
 
   const [getGig, setGetGig] = useState([]);
   const getAllGig = async () => {
-    const GigData = await axios.get("http://localhost:5000/api/allgigs");
+    const GigData = await axios.get(
+      "https://gold-fair-firefly.cyclic.app/api/allgigs"
+    );
     const data = GigData.data.gig;
     setGetGig(data);
     console.log(setGetGig);
@@ -63,7 +65,7 @@ export default function ApplyForGig() {
   const [singleGig, setSingleGig] = useState([]);
   const handleClic = async (id) => {
     const singlegigdat = await axios.get(
-      `http://localhost:5000/api/gigs/${id}`
+      `https://gold-fair-firefly.cyclic.app/api/gigs/${id}`
     );
     const data = singlegigdat.data.gig;
     setSingleGig(data);
@@ -133,7 +135,7 @@ export default function ApplyForGig() {
                           <img
                             className="w-[25vh] h-[25vh] rounded-lg"
                             alt="naruto"
-                            src={`http://localhost:5000/${gig.gigProfile}`}
+                            src={`https://gold-fair-firefly.cyclic.app/${gig.gigProfile}`}
                           />
                         </div>
 
@@ -205,7 +207,7 @@ export default function ApplyForGig() {
               <img
                 className="w-auto h-[55vh]  rounded-lg"
                 alt="naruto"
-                src={`http://localhost:5000/${singleGig.gigProfile}`}
+                src={`https://gold-fair-firefly.cyclic.app/${singleGig.gigProfile}`}
               />
             </div>
             <div className="mt-[20px]">

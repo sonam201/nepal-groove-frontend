@@ -56,7 +56,7 @@ export default function SignAsArtist() {
     try {
       console.log(profile_image, "sapana");
       const response = await axios.patch(
-        `http://localhost:5000/api/loginasrestaurant/${email}`,
+        `https://gold-fair-firefly.cyclic.app/api/loginasrestaurant/${email}`,
         formData,
 
         {

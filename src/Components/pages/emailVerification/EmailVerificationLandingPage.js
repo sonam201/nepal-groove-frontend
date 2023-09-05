@@ -17,7 +17,7 @@ export default function EmailVerificationLandingPage(){
     useEffect(()=>{
         const loadVerification = async()=>{
             try{
-                    const response = await axios.put('http://localhost:5000/api/verifyemail',{verificationString})
+                    const response = await axios.put('https://gold-fair-firefly.cyclic.app/api/verifyemail',{verificationString})
                     const {token} = response.data;
                     setToken(token);
                     SetIsSuccess(true); 

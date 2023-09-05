@@ -24,7 +24,7 @@ export default function FindShows() {
   //
   const [getEvent, setGetEvent] = useState([]);
   const getAllEvents = async () => {
-    const EventData = await axios.get("http://localhost:5000/api/allevents");
+    const EventData = await axios.get("https://gold-fair-firefly.cyclic.app/api/allevents");
     const data = EventData.data.allevent;
     setGetEvent(data);
     console.log(setGetEvent);
@@ -37,7 +37,7 @@ export default function FindShows() {
   const [storeevent, setStoreEvent] = useState([]);
   const clicksingle = async (id) => {
     const singleevent = await axios.get(
-      `http://localhost:5000/api/singleevent/${id}`
+      `https://gold-fair-firefly.cyclic.app/api/singleevent/${id}`
     );
     const data = singleevent.data.allevent;
     setStoreEvent(data);
@@ -82,7 +82,7 @@ export default function FindShows() {
                     <img
                       className="w-[20vh] h-[20vh] rounded-lg"
                       alt="naruto"
-                      src={`http://localhost:5000/${event.EventPic}`}
+                      src={`https://gold-fair-firefly.cyclic.app/${event.EventPic}`}
                     />
                   </div>
 
@@ -154,7 +154,7 @@ export default function FindShows() {
               <img
                 className="w-auto h-[55vh]  rounded-lg"
                 alt="naruto"
-                src={`http://localhost:5000/${storeevent.EventPic}`}
+                src={`https://gold-fair-firefly.cyclic.app/${storeevent.EventPic}`}
               />
               <h1 className=" text-[15px]   flex justify-center gap-1 text-black ">
                 <p className="text-[18px] mt-[-3px] font-medium">Address:</p>

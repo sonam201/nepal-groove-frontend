@@ -33,7 +33,7 @@ export default function BookingDetails() {
   const Restaurantinformation = async () => {
     try {
       const RestaurantInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
       const data = RestaurantInfo.data.getprofileinfo;
       setGetRestaurantName(data);
@@ -47,7 +47,7 @@ export default function BookingDetails() {
   const [bookingArray, setBookingArray] = useState([]);
   const bookingdetails = async (user) => {
     const bookingdetail = await axios.get(
-      `http://localhost:5000/api/bookingdetail/${user.id}`
+      `https://gold-fair-firefly.cyclic.app/api/bookingdetail/${user.id}`
     );
     const data = bookingdetail.data.book;
     console.log(data, "sathi ho");

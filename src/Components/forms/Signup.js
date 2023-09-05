@@ -37,7 +37,7 @@ export default function Loginpage() {
   const onSignUpClicked = async ({ email, passwordhai }) => {
     try {
       console.log(assignrole);
-      const response = await axios.post("http://localhost:5000/api/signup", {
+      const response = await axios.post("https://gold-fair-firefly.cyclic.app/api/signup", {
         email: email,
         password: passwordhai,
         role: assignrole,

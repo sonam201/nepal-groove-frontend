@@ -37,7 +37,7 @@ export default function NavbarForRestaurant() {
   const Restaurantinformation = async () => {
     try {
       const RestaurantInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       // console.log(ArtistInfo);
@@ -83,7 +83,7 @@ export default function NavbarForRestaurant() {
     formData.append("createdBy", userId);
 
     const response = await axios.post(
-      "http://localhost:5000/api/gigs",
+      "https://gold-fair-firefly.cyclic.app/api/gigs",
       formData,
 
       {
@@ -128,7 +128,7 @@ export default function NavbarForRestaurant() {
     formData.append("ticketprice", ticketprice);
     formData.append("description", description);
     const response = await axios.post(
-      "http://localhost:5000/api/event",
+      "https://gold-fair-firefly.cyclic.app/api/event",
       formData,
       {
         headers: {
@@ -148,7 +148,7 @@ export default function NavbarForRestaurant() {
   const [arrayNoti, setArrayNoti] = useState([]);
   const getapplygig = async (user) => {
     const MyGig = await axios.get(
-      `http://localhost:5000/api/mygig/${user.id}?role=${user.role}`
+      `https://gold-fair-firefly.cyclic.app/api/mygig/${user.id}?role=${user.role}`
     );
     setNotification(MyGig.data);
     const data = MyGig.data;
@@ -204,7 +204,7 @@ export default function NavbarForRestaurant() {
   //for changin the status
   const acceptHandler = async (id, gig) => {
     const response = await axios.put(
-      `http://localhost:5000/api/gigapply/${id}`,
+      `https://gold-fair-firefly.cyclic.app/api/gigapply/${id}`,
       {
         status: "accepted",
         appliedGig: gig,
@@ -218,7 +218,7 @@ export default function NavbarForRestaurant() {
   };
   const deleteHandler = async (id) => {
     const respond = await axios.put(
-      `http://localhost:5000/api/gigapply/${id}`,
+      `https://gold-fair-firefly.cyclic.app/api/gigapply/${id}`,
       {
         status: "declined",
       }
@@ -282,7 +282,7 @@ export default function NavbarForRestaurant() {
           <div style={{ position: "relative" }}>
             <Dropdown overlay={menu} trigger={["click"]}>
               <img
-                src={`http://localhost:5000/${getInfoRestaurant?.profile_image}`}
+                src={`https://gold-fair-firefly.cyclic.app/${getInfoRestaurant?.profile_image}`}
                 alt="profile"
                 className="w-[7vh] h-[7vh] rounded-[25px]  mr-5 "
               />
@@ -725,7 +725,7 @@ export default function NavbarForRestaurant() {
                       <img
                         className="w-auto h-[40vh]  rounded-lg"
                         alt="naruto"
-                        src={`http://localhost:5000/${array.appliedBy?.profile_image}`}
+                        src={`https://gold-fair-firefly.cyclic.app/${array.appliedBy?.profile_image}`}
                       />
                     </div>
                     <div>

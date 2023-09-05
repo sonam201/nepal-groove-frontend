@@ -55,7 +55,7 @@ export default function SignAsRestaurant() {
     formData.append("isformfilled", isformfilled.toString());
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/loginasrestaurant/${email}`,
+        `https://gold-fair-firefly.cyclic.app/api/loginasrestaurant/${email}`,
         formData,
 
         {

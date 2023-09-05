@@ -29,7 +29,7 @@ export default function DashBoardForViewer() {
   const Artistinformation = async () => {
     try {
       const ArtistInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       console.log(ArtistInfo);

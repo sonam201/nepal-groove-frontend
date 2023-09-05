@@ -29,7 +29,7 @@ export default function DashBoardForArtist() {
   const Artistinformation = async () => {
     try {
       const ArtistInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       console.log(ArtistInfo);
@@ -49,7 +49,7 @@ export default function DashBoardForArtist() {
   const available = async () => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/available/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/available/${email}`
       );
       toast.success("Your availability is set to true", {
         position: "bottom-right",

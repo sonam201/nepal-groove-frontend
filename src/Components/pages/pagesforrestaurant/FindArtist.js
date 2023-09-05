@@ -54,18 +54,21 @@ export default function FindArtist() {
     Address,
     budget,
   }) => {
-    const response = await axios.post("http://localhost:5000/api/booking", {
-      gigname: gigname,
-      gigtype: gigtype,
-      date: date,
-      showtype: showtype,
-      startingtime: startingtime,
-      endingtime: endingtime,
-      Address: Address,
-      budget: budget,
-      bookedBy: userId,
-      bookedTo: artistId,
-    });
+    const response = await axios.post(
+      "https://gold-fair-firefly.cyclic.app/api/booking",
+      {
+        gigname: gigname,
+        gigtype: gigtype,
+        date: date,
+        showtype: showtype,
+        startingtime: startingtime,
+        endingtime: endingtime,
+        Address: Address,
+        budget: budget,
+        bookedBy: userId,
+        bookedTo: artistId,
+      }
+    );
     console.log(response, "k ayo ta ");
     setShowBookModal(false);
     toast.success("Booking Request Sent", {
@@ -89,7 +92,7 @@ export default function FindArtist() {
   const [products, setProducts] = useState([]);
   const getProducts = async () => {
     const productsData = await axios.get(
-      `http://localhost:5000/api/searchuser?sort=${sortValue}`
+      `https://gold-fair-firefly.cyclic.app/api/searchuser?sort=${sortValue}`
     );
 
     const data = await productsData.data.artistuser;
@@ -102,11 +105,14 @@ export default function FindArtist() {
   }, [sortValue]);
 
   const getAllArtist = async () => {
-    const ArtistData = await axios.get("http://localhost:5000/api/searchuser", {
-      params: {
-        firstname: searchQuery,
-      },
-    });
+    const ArtistData = await axios.get(
+      "https://gold-fair-firefly.cyclic.app/api/searchuser",
+      {
+        params: {
+          firstname: searchQuery,
+        },
+      }
+    );
     const data = ArtistData.data.artistuser;
 
     setGetArtist(data);
@@ -120,7 +126,7 @@ export default function FindArtist() {
   const [showArtist, setShowArtist] = useState([]);
   const getSingleArtist = async (email) => {
     const singleArtist = await axios.get(
-      `http://localhost:5000/api/singleuser/${email}`
+      `https://gold-fair-firefly.cyclic.app/api/singleuser/${email}`
     );
     const data = singleArtist.data.artist;
     setShowArtist(data);
@@ -297,7 +303,7 @@ export default function FindArtist() {
                           <img
                             className="w-[35vh] h-[25vh] rounded-lg mt-2 mb-2 ml-2"
                             alt="naruto"
-                            src={`http://localhost:5000/${artist.profile_image}`}
+                            src={`https://gold-fair-firefly.cyclic.app/${artist.profile_image}`}
                           />
                         </div>
 
@@ -577,7 +583,7 @@ export default function FindArtist() {
             <img
               className="w-auto h-[40vh]  rounded-lg"
               alt="naruto"
-              src={`http://localhost:5000/${showArtist.profile_image}`}
+              src={`https://gold-fair-firefly.cyclic.app/${showArtist.profile_image}`}
             />
           </div>
           <div>

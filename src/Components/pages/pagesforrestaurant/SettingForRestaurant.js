@@ -31,7 +31,7 @@ export default function SettingForRestaurant() {
   const Restaurantinformation = async () => {
     try {
       const ArtistInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       console.log(ArtistInfo);
@@ -73,7 +73,7 @@ export default function SettingForRestaurant() {
       formData.append("socialmedia", socialmedia);
       formData.append("bio", bio);
       const response = await axios.patch(
-        `http://localhost:5000/api/editprofile/${email}`,
+        `https://gold-fair-firefly.cyclic.app/api/editprofile/${email}`,
         formData,
 
         {

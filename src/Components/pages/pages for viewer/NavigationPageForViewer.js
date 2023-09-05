@@ -28,7 +28,7 @@ export default function NavigationPageForViewer() {
   const Viewerinformation = async () => {
     try {
       const ViewerInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       // console.log(ArtistInfo);
@@ -88,7 +88,7 @@ export default function NavigationPageForViewer() {
           <div style={{ position: "relative" }}>
             <Dropdown overlay={menu} trigger={["click"]}>
               <img
-                src={`http://localhost:5000/${getInfoViewer?.profile_image}`}
+                src={`https://gold-fair-firefly.cyclic.app/${getInfoViewer?.profile_image}`}
                 alt="profile"
                 className="w-[7vh] h-[7vh] rounded-[25px]  mr-5 "
               />

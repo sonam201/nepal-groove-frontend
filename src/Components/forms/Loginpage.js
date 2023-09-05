@@ -26,7 +26,7 @@ export default function Loginpage() {
 
   const onLogInClicked = async ({ email, password }) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
+      const response = await axios.post("https://gold-fair-firefly.cyclic.app/api/login", {
         email: email,
         password: password,
       });

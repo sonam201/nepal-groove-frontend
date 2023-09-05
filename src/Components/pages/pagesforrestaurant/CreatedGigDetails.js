@@ -34,7 +34,7 @@ export default function CreatedGigDetails() {
   const Restaurantinformation = async () => {
     try {
       const RestaurantInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
       const data = RestaurantInfo.data.getprofileinfo;
       setGetRestaurantName(data);
@@ -48,7 +48,7 @@ export default function CreatedGigDetails() {
   const [gigArray, setGigArray] = useState([]);
   const gigdetails = async (user) => {
     const gigdetail = await axios.get(
-      `http://localhost:5000/api/createdgig/${user.id}`
+      `https://gold-fair-firefly.cyclic.app/api/createdgig/${user.id}`
     );
     const data = gigdetail.data.gig;
     setGigArray(data);
@@ -60,7 +60,9 @@ export default function CreatedGigDetails() {
   //api for delete gig
 
   const deletegig = async (id) => {
-    const delgig = await axios.delete(`http://localhost:5000/api/dgigs/${id}`);
+    const delgig = await axios.delete(
+      `https://gold-fair-firefly.cyclic.app/api/dgigs/${id}`
+    );
     toast.info("Gig Deleted", {
       position: "bottom-right",
       theme: "dark",

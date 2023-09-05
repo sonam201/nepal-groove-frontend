@@ -27,7 +27,7 @@ export default function AppliedGigDetails() {
   const Artistinformation = async () => {
     try {
       const ArtistInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       console.log(ArtistInfo);
@@ -49,7 +49,7 @@ export default function AppliedGigDetails() {
   const [gigArray, setGigArray] = useState([]);
   const gigdetails = async (user) => {
     const gigdetail = await axios.get(
-      `http://localhost:5000/api/appliedgigdetail/${user.id}`
+      `https://gold-fair-firefly.cyclic.app/api/appliedgigdetail/${user.id}`
     );
     const data = gigdetail.data.gighai;
     console.log(data, "sathi ho");

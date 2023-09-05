@@ -27,7 +27,7 @@ export default function NavigationPageForArtist() {
   const [notiArray, setNotiArray] = useState([]);
   const getmybooking = async (user) => {
     const MyBooking = await axios.get(
-      `http://localhost:5000/api/mybooking/${user.id}?role=${user.role}`
+      `https://gold-fair-firefly.cyclic.app/api/mybooking/${user.id}?role=${user.role}`
     );
 
     setNotifications(MyBooking.data);
@@ -46,7 +46,7 @@ export default function NavigationPageForArtist() {
   const Artistinformation = async () => {
     try {
       const ArtistInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       // console.log(ArtistInfo);
@@ -66,7 +66,7 @@ export default function NavigationPageForArtist() {
   //for changin the status
   const acceptHandler = async (id, bookedTo) => {
     const response = await axios.put(
-      `http://localhost:5000/api/booking/${id}`,
+      `https://gold-fair-firefly.cyclic.app/api/booking/${id}`,
       {
         status: "accepted",
         bookedTo: bookedTo,
@@ -79,9 +79,12 @@ export default function NavigationPageForArtist() {
     });
   };
   const deleteHandler = async (id) => {
-    const respond = await axios.put(`http://localhost:5000/api/booking/${id}`, {
-      status: "declined",
-    });
+    const respond = await axios.put(
+      `https://gold-fair-firefly.cyclic.app/api/booking/${id}`,
+      {
+        status: "declined",
+      }
+    );
     setVisibleModal(false);
     toast.error("Booking Declined", {
       position: "bottom-right",
@@ -166,7 +169,7 @@ export default function NavigationPageForArtist() {
           <div style={{ position: "relative" }}>
             <Dropdown overlay={menu} trigger={["click"]}>
               <img
-                src={`http://localhost:5000/${getInfoArtist?.profile_image}`}
+                src={`https://gold-fair-firefly.cyclic.app/${getInfoArtist?.profile_image}`}
                 alt="profile"
                 className="w-[7vh] h-[7vh] rounded-[25px]  mr-5 "
               />

@@ -31,14 +31,17 @@ export default function ViewArtist({ artist }) {
   //for search
   const [searchQuery, setSearcQuery] = useState("");
   const getAllArtist = async () => {
-    const ArtistData = await axios.get("http://localhost:5000/api/searchuser", {
-      params: {
-        firstname: searchQuery,
-        // sort: sortOption,
+    const ArtistData = await axios.get(
+      "https://gold-fair-firefly.cyclic.app/api/searchuser",
+      {
+        params: {
+          firstname: searchQuery,
+          // sort: sortOption,
 
-        // genre: genreFilters.join(","),
-      },
-    });
+          // genre: genreFilters.join(","),
+        },
+      }
+    );
     const data = ArtistData.data.artistuser;
     setGetArtist(data);
   };
@@ -49,7 +52,7 @@ export default function ViewArtist({ artist }) {
   const [showArtist, setShowArtist] = useState([]);
   const getSingleArtist = async (email, id) => {
     const singleArtist = await axios.get(
-      `http://localhost:5000/api/singleuser/${email}`
+      `https://gold-fair-firefly.cyclic.app/api/singleuser/${email}`
     );
     const data = singleArtist.data.artist;
     setArtistID(id);
@@ -73,11 +76,14 @@ export default function ViewArtist({ artist }) {
     console.log("ayo artist id", artistId);
   };
   const comment = async ({ Text }) => {
-    const response = await axios.post("http://localhost:5000/api/comment", {
-      Text: Text,
-      CommentedBy: userId,
-      CommentedTo: artistId,
-    });
+    const response = await axios.post(
+      "https://gold-fair-firefly.cyclic.app/api/comment",
+      {
+        Text: Text,
+        CommentedBy: userId,
+        CommentedTo: artistId,
+      }
+    );
     reset();
     toast.success("Comment Posted", {
       position: "bottom-right",
@@ -90,7 +96,7 @@ export default function ViewArtist({ artist }) {
   const [commentArray, setCommentArray] = useState([]);
   const commentlists = async (artist) => {
     const commentdetails = await axios.get(
-      `http://localhost:5000/api/commentlists/${artistID}`
+      `https://gold-fair-firefly.cyclic.app/api/commentlists/${artistID}`
     );
     const data = commentdetails.data.com;
 
@@ -140,7 +146,7 @@ export default function ViewArtist({ artist }) {
                     <img
                       className="w-[20vh] h-[20vh] rounded-lg"
                       alt="naruto"
-                      src={`http://localhost:5000/${artist.profile_image}`}
+                      src={`https://gold-fair-firefly.cyclic.app/${artist.profile_image}`}
                       onClick={() => onArtistClicked(artist)}
                     />
                   </div>
@@ -200,7 +206,7 @@ export default function ViewArtist({ artist }) {
             <img
               className="w-auto h-[40vh]  rounded-lg"
               alt="naruto"
-              src={`http://localhost:5000/${showArtist.profile_image}`}
+              src={`https://gold-fair-firefly.cyclic.app/${showArtist.profile_image}`}
             />
           </div>
           <div>

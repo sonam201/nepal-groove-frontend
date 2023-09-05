@@ -9,7 +9,9 @@ export default function DetailsOfRestaurant() {
   // for getting the booking details
   const [bookingArray, setBookingArray] = useState([]);
   const bookingdetails = async () => {
-    const bookingdetail = await axios.get(`http://localhost:5000/api/ruser`);
+    const bookingdetail = await axios.get(
+      `https://gold-fair-firefly.cyclic.app/api/ruser`
+    );
     const data = bookingdetail.data.fname;
     console.log(data, "chalfal");
     setBookingArray(data);

@@ -17,7 +17,7 @@ export const Config = {
       let config = {};
 
       axios
-        .post("http://localhost:5000/api/v2/khalti/verify", data, config)
+        .post("https://gold-fair-firefly.cyclic.app/api/v2/khalti/verify", data, config)
         .then((response) => {
           console.log(response.data);
         })

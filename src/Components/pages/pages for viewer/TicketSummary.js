@@ -24,7 +24,7 @@ export default function TicketSummary() {
   const [storeevent, setStoreEvent] = useState("");
   const clicksingle = async () => {
     const singleevent = await axios.get(
-      `http://localhost:5000/api/singleevent/${eventId}`
+      `https://gold-fair-firefly.cyclic.app/api/singleevent/${eventId}`
     );
     const data = singleevent.data.allevent;
 
@@ -39,7 +39,7 @@ export default function TicketSummary() {
   const Artistinformation = async () => {
     try {
       const ArtistInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       console.log("info", ArtistInfo);
@@ -64,7 +64,7 @@ export default function TicketSummary() {
             <img
               className="w-auto h-[55vh] rounded-lg"
               alt="naruto"
-              src={`http://localhost:5000/${storeevent.EventPic}`}
+              src={`https://gold-fair-firefly.cyclic.app/${storeevent.EventPic}`}
             />
             <h1 className="font-medium  text-center text-orange-600">
               {storeevent.ArtistName}

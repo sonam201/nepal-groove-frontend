@@ -31,7 +31,7 @@ export default function SettingForArtist() {
   const Artistinformation = async () => {
     try {
       const ArtistInfo = await axios.get(
-        `http://localhost:5000/api/profilebeforeedit/${email}`
+        `https://gold-fair-firefly.cyclic.app/api/profilebeforeedit/${email}`
       );
 
       console.log(ArtistInfo);
@@ -59,7 +59,7 @@ export default function SettingForArtist() {
   }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/editprofile/${email}`,
+        `https://gold-fair-firefly.cyclic.app/api/editprofile/${email}`,
         {
           profile: profile,
           firstname: firstname,
